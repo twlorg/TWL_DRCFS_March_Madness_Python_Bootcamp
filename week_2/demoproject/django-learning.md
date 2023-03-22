@@ -12,7 +12,8 @@ To make a project that prints "Hello World" using Django, you would follow these
 
    1.  Open up your computer's terminal (which is like a magic box that lets you talk to your computer).
 
-   2.  Use the terminal to tell Django to create a new project for you. You can do this by typing   ```django-admin startproject helloworldproject.```
+   2.  Use the terminal to tell Django to create a new project for you. You can do this by typing   ```django-admin startproject demoproject.```
 
-   3.  Now, you need to create an "app" within your project that will handle the "Hello World" message. You can do this by typing ```python manage.py startapp helloworldapp```.
-    Open up the file called views.py within your new app's directory (which is in the helloworldapp folder), and add the following code:
+   3.  Now, you need to create an "app" within your project that will handle the "Hello World" message. You can do this by typing ```python manage.py startapp testapp```.
+
+   4. Open up the file called views.py within your new app's directory (which is in the helloworldapp folder), and add the following code:
