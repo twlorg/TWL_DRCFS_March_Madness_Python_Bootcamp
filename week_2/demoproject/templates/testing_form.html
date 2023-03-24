@@ -1,0 +1,14 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action = "" method = "POST">
+            {% csrf_token %}
+            <label for="your_name">Tapaiko Naam: </label>
+            <input id="your_name" type="text" name="your_name" placeholder="your name">
+            <input id="your_age" type="text" name="your_age" placeholder="your age">
+            <input type="submit" value="send">
+        </form>
+    </body>
+</html>
