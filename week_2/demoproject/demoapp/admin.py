@@ -3,3 +3,4 @@ from . import models
 
 
 admin.site.register(models.TestDb)
+admin.site.register(models.NewUser)
