@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
+{%  load static %}
 
 {% block randomname %}
+
+<link href="{% static 'css/form.css' %}" rel="stylesheet">     
 <form method="POST">
 {% csrf_token  %}
 <div class="form">
-    <div class="title">Welcome</div>
+    <div class="title">March Madness</div>
     <div class="subtitle">Let's create your account!</div>
     <div class="input-container ic1">
       <input id="firstname" class="input" type="text" placeholder=" " name="first_name"/>

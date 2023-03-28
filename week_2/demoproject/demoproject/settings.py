@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z^rb^*_*gwo02984!^u%oz*g$%fsdfas$f=70760xup0uyyzs2p4+l*y'
+SECRET_KEY = 'django-insecure-z^rb^*_*gwo02984!^ugsdfgsdfg%oz*g$%fsdfas$f=70760xup0uyyzs2p4+l*y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 is_production = socket.gethostname().endswith("com")
@@ -115,14 +115,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/'),
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [   # django will try to search the static files yo location ma
+   os.path.join(BASE_DIR, 'static/')
 ]
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR/"assets"
+STATIC_ROOT = BASE_DIR / "assets"   # yo bhaneko yaha gayera halxa django le files haru
+
+
+# lets play with the media (user uploaded medias or files)
+
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR/"media"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

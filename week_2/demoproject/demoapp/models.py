@@ -15,3 +15,7 @@ class NewUser(models.Model):
 
     def __str__(self):
         return self.firstname +' ' + self.lastname
+    
+
+class UserMedia(models.Model):
+    file=models.FileField()
