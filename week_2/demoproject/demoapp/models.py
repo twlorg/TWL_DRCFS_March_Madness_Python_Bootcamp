@@ -19,3 +19,4 @@ class NewUser(models.Model):
 
 class UserMedia(models.Model):
     file=models.FileField()
+

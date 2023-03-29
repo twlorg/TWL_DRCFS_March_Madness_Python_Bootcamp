@@ -54,8 +54,10 @@ def fileupload(request):
 
 
 def contextplaying(request):
+    users=NewUser()
+    print(users.firstname)
 
-    a={"name":"Nabin", "items":['bishal', 'hero', 'ashim']}
+    a={"name":"Nabin", "items":['OOP', 'Django', 'networking', 'otherstuffs'], }
 
     return render(request, 'contextplaying.html', a)
 

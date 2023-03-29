@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --container-height: 498px;
+}
+
+section {
+  position: relative;
+  padding-right: 50px;
+}
+
+.list {
+  max-height: var(--container-height);
+  border: 2px solid #37392e;
+  border-radius: 5px;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-timeline: listTimeline vertical;
+}
+
+.animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background-size: 50px 40px;
+  /* background image on bottom of css for readability */
+}
+
+@supports (scroll-timeline: works) {
+  .animation {
+    animation: moveBackground 1s alternate linear;
+    animation-timeline: listTimeline;
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 calc(var(--container-height) / -1);
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #eee5e5;
+}
+
+li {
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  scroll-snap-align: start;
+}
+
+li:first-child {
+  border: 0;
+}
+
+/* Demo styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #37392e;
+  background: #ddcecd;
+  font-family: "Poppins", sans-serif;
+}
+
+.animation {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg id='Isolation_Mode' data-name='Isolation Mode' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 633.33 680'%3E%3Cpath fill='%2328AFB0' d='M383.33,500c27.61,0,50,22.39,50,50,0,25.99-19.83,47.35-45.18,49.77l-4.82,.23H50c-27.61,0-50-22.39-50-50,0-25.99,19.83-47.35,45.18-49.77l4.82-.23H383.33Zm200-166.67c27.61,0,50,22.39,50,50s-22.39,50-50,50H50c-27.61,0-50-22.39-50-50s22.39-50,50-50H583.33Zm-200-166.67c27.61,0,50,22.39,50,50,0,25.99-19.83,47.35-45.18,49.77l-4.82,.23H50c-27.61,0-50-22.39-50-50,0-25.99,19.83-47.35,45.18-49.77l4.82-.23H383.33ZM583.33,0c27.61,0,50,22.39,50,50,0,25.99-19.83,47.35-45.18,49.77l-4.82,.23H50C22.39,100,0,77.61,0,50,0,24.01,19.83,2.65,45.18,.23l4.82-.23H583.33Z'/%3E%3C/svg%3E");
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #28afb0;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #19647e;
+}
