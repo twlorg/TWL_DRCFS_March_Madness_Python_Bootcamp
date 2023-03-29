@@ -2,15 +2,16 @@
 
 {% block randomname %}
 
-
-Hello {{name}}
-
-
-<section>
+Hello <b>{{name}}</b>
+ <br>
+ <br>
     <div class="list">
       <ul>
-        <li></li>
+        {% for i in items %}
+            <li>{{i}}</li>
+        {% endfor %}
       </ul>
     </div>
     <div class="animation"></div>
-  </section>
+
+{% endblock %}
