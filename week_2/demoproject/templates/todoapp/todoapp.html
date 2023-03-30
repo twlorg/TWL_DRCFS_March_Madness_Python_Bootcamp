@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -41,13 +42,13 @@
 		<hr/>
 		{{i.details}}
 		<br />
-		<br />
+		<br />  
 		<form action="/del/{{i.id}}" method="POST" style=" padding-right: 4%; padding-bottom: 3%;">
 		{% csrf_token %}
 		<button value="remove" type="submit" class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span>  remove</button>
 		</form>
 	</div>
-	{% endfor%}
+	{% endfor %}
 	</div>
 	<div class="col-md-1"> </div>
 	<div class="col-md-3" >
@@ -63,5 +64,6 @@
 </div>
 </div>
 </body>
+
 
 </html>
