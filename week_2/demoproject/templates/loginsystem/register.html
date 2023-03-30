@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block randomname %} 
+
+{% load crispy_forms_tags %}         
+
+<!--Register--> 
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-info">
+	<strong>{{message}}</strong>
+</div>
+{% endfor %}
+{% endif %}
+<div class="container py-5">
+	<h1>MarchMadness Register</h1>
+	<form method="POST">
+		{% csrf_token %}
+		{{ register_form|crispy }}                    
+		<button class="btn btn-primary" type="submit">Register</button>
+	</form>
+	<p class="text-center">If you already have an account, <a href="/login">login</a> instead.</p>
+</div>
+
+{% endblock %}
